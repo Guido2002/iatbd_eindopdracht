@@ -14,5 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    Route::get('/item', [\App\Http\Controllers\ItemController::class, 'index']);
 });
+
+Route::get('/movie/{id}', function () {
+    Route::get('/item/{id}', [\App\Http\Controllers\ItemController::class, 'show']);
+});
+
+
