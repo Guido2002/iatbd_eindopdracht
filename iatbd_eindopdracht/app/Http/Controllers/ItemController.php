@@ -26,4 +26,24 @@ class ItemController extends Controller
             'user' => auth()->user(),
         ]);
     }
+
+    public function create() {
+        return view('create', [
+            'kind_of_item' => \App\Models\KindOfItem::all(),
+            'items' => \App\Models\Item::all(),
+        ]);
+    }
+
+    public function store(Request $request, \App\Models\Item $item) {
+        $item->item_name = $request->input("name");
+        $item->kind = $request->input('kind');
+        $item->description = $request->input('description');
+        $item->image = $request->input('image');
+        $item->time_loaned = $request->input('leentijd');
+        $item->id_lender = auth()->id();
+
+        $item->save();
+
+        return redirect('/items');
+    }
 }
