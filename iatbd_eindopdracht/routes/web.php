@@ -14,11 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    Route::get('/item', [\App\Http\Controllers\ItemController::class, 'index']);
+    return view('welcome');
 });
 
-Route::get('/movie/{id}', function () {
-    Route::get('/item/{id}', [\App\Http\Controllers\ItemController::class, 'show']);
-});
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
+Route::get('/', [\App\Http\Controllers\ItemController::class, 'index']);
 
+require __DIR__.'/auth.php';
