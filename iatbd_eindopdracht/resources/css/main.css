@@ -1,0 +1,56 @@
+:root {
+    --color1: #F8F9FA;
+    --color2: #E9ECEF;
+    --color3: #DEE2E6;
+    --color4: #CED4DA;
+    --color5: #ADB5BD;
+    --color6: #6C757D;
+    --color7: #495057;
+    --color8: #343A40;
+    --color9: #212529;
+}
+
+.wrapper {
+    display:flex;
+    height: 100%;
+    flex-flow: row wrap;
+    text-align: center;
+    background-color: var(--color9);
+}
+
+p{
+    color: var(--color4);
+}
+
+h1 {
+    color: var(--color4)
+}
+
+.wrapper > * {
+    padding: 10px;
+    margin: 10px;
+    flex: 1 100%;
+    border-radius: 10px;
+}
+
+.header {
+    background-color: var(--color8);
+    height: 120px;
+}
+
+.footer {
+    background-color: var(--color6);
+    height: 80px;
+    color: var(--color4);
+    display: flex;
+    flex-flow: row wrap;
+    padding: 20px;
+}
+
+.main {
+    text-align: center;
+    background-color: var(--color7);
+    height:  300px;
+    font-size: 24px;
+    flex:1;
+}
