@@ -6,6 +6,7 @@
 </head>
 <body class="wrapper">
     @include('components.header')
+    <a href="/mijnprofiel">{{auth()->user()->name}}</a>
 
     <main class="main">
         @foreach ($items as $item)

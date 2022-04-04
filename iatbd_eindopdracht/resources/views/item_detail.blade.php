@@ -6,6 +6,7 @@
 </head>
 <body class="wrapper">
     @include('components.header')
+    <a href="/mijnprofiel">{{auth()->user()->name}}</a>
     <main>
         <h2>{{$item->item_name}}</h2>
         <section>

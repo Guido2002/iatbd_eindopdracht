@@ -23,5 +23,7 @@ Route::get('/dashboard', function () {
 
 Route::get('/items', [\App\Http\Controllers\ItemController::class, 'index']);
 Route::get('/item/{id}', [\App\Http\Controllers\ItemController::class, 'show']);
+Route::get('/mijnprofiel', [\App\Http\Controllers\ItemController::class, 'mijnprofiel']);
+
 
 require __DIR__.'/auth.php';
