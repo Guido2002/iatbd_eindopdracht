@@ -11,4 +11,11 @@ class UserController extends Controller
             'users' => \App\Models\User::find($id),
         ]);
     }
+
+    public function account() {
+
+        
+
+        return redirect("/mijnprofiel");
+    }
 }

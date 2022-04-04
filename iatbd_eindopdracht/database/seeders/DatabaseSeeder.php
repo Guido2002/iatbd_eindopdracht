@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             UsersTableSeeder::class,
             KindOfItemTableSeeder::class,
             ItemsTableSeeder::class,
+            ReviewsTableSeeder::class,
         ]);
     }
 }

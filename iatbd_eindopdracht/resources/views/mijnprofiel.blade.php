@@ -34,7 +34,7 @@
             @foreach ($items as $item)
             @if ($item->id_borrower == $login_user)
                 <section class="item_card">
-                    <figure><img class="item_img" src="{{$item->image}}" alt="$item->item_name"></figure>
+                    <figure><img class="item_img" src="{{$item->image}}" alt="{{$item->item_name}}"></figure>
                     <div>
                         <h2>{{$item->item_name}}</h2>
                         <p>Categorie: {{$item->kind}}</p>
@@ -44,9 +44,15 @@
                 </section>
                 @endif
         @endforeach
-        @if ($item->id_borrower != $login_user)
-        <p>Je hebt momenteel geen producten</p>
-        @endif
+        </section>
+        <section>
+            <h3>Reviews</h3>
+            @foreach ($reviews as $review)
+                @if ($review->reader == $login_user)
+                    <p>{{$review->review}}</p>
+                    <p>Cijfer voor het lenen van product: {{$review->cijfer}}</p>
+                @endif
+            @endforeach
         </section>
     </main>
     @include('components.footer')

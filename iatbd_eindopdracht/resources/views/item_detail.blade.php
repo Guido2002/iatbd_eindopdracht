@@ -29,9 +29,9 @@
         </div>
             @if ($login_user == $item->id_borrower)
                 <p>Dit item is al uitgeleend!</p>
-                <a href="/review/{{$login_user}}&{{$item->id}}">Retourneer</a>
+                <a href="/review/{{$item->id_lender}}&{{$item->id}}">Retourneer</a>
             @elseif ($login_user ==  $item->id_lender || $item->is_loaned == 1)
-                <button>ARIE</button>
+                
             @else
                 <a href="/geleenditem/{{$item->id}}">Leen product</a>
             @endif
