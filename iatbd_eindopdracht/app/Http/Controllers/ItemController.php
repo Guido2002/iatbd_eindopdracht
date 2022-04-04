@@ -13,8 +13,9 @@ class ItemController extends Controller
     }
 
     public function show($id) {
-        return view('item.show', [
-            'items' => \App\Models\Item::find($id),
+        return view('item_detail', [
+            'item' => \App\Models\Item::find($id),
+            'users' =>  \App\Models\User::all(),
         ]);
     }
 }
