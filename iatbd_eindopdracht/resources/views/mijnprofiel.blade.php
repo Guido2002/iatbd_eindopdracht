@@ -13,7 +13,7 @@
         <section>
             <h3>Jouw producten</h3>
             @foreach ($items as $item)
-            @if ($item->id_lender == $user->id)
+            @if ($item->id_lender == $login_user)
                 <section class="item_card">
                     <figure><img class="item_img" src="{{$item->image}}" alt="$item->item_name"></figure>
                     <div>
@@ -25,14 +25,14 @@
                 </section>
                 @endif
         @endforeach
-        @if ($item->id_lender != $user->id)
+        @if ($item->id_lender != $login_user)
         <p>Je hebt momenteel geen producten</p>
         @endif
         </section>
         <section>
             <h3>Producten die momenteelt leent</h3>
             @foreach ($items as $item)
-            @if ($item->id_borrow == $user->id)
+            @if ($item->id_borrower == $login_user)
                 <section class="item_card">
                     <figure><img class="item_img" src="{{$item->image}}" alt="$item->item_name"></figure>
                     <div>
@@ -44,7 +44,7 @@
                 </section>
                 @endif
         @endforeach
-        @if ($item->id_borrow != $user->id)
+        @if ($item->id_borrower != $login_user)
         <p>Je hebt momenteel geen producten</p>
         @endif
         </section>

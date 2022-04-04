@@ -26,6 +26,7 @@ Route::get('/item/{id}', [\App\Http\Controllers\ItemController::class, 'show']);
 Route::post('/items', [\App\Http\Controllers\ItemController::class, 'store']);
 Route::get('/mijnprofiel', [\App\Http\Controllers\ItemController::class, 'mijnprofiel']);
 Route::get('/create', [\App\Http\Controllers\ItemController::class, 'create']);
+Route::get('/geleenditem/{id}', [\App\Http\Controllers\ItemController::class, 'lenen']);
 
 
 require __DIR__.'/auth.php';

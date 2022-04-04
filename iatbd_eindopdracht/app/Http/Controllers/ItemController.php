@@ -14,16 +14,23 @@ class ItemController extends Controller
     }
 
     public function show($id) {
+
+        $user = Auth::id();
+
         return view('item_detail', [
             'item' => \App\Models\Item::find($id),
             'users' =>  \App\Models\User::all(),
+            'login_user' => $user,
         ]);
     }
 
     public function mijnprofiel() {
+
+        $login_user = Auth::id();
+
         return view('mijnprofiel', [
             'items' => \App\Models\Item::all(),
-            'user' => auth()->user(),
+            'login_user' => $login_user,
         ]);
     }
 
@@ -45,5 +52,14 @@ class ItemController extends Controller
         $item->save();
 
         return redirect('/items');
+    }
+
+    public function lenen( $id) {
+        $item = \App\Models\Item::find($id);
+        $item->loaned = 1;
+        $item->id_borrower = auth()->id();
+        $item->save();
+
+        return redirect("/mijnprofiel");
     }
 }
