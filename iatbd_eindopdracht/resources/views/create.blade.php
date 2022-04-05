@@ -6,8 +6,11 @@
 </head>
 <body class="wrapper">
     @include('components.header')
+    @if (auth()->user()->blocked == 1)
+    <p>U bent geblokkeerd door de beheerder</p>
+    <a href="/logout">Terug naar inlogpagina</a>
+    @else
     <a href="/mijnprofiel">{{auth()->user()->name}}</a>
-
     <main>
         <section class="center">
             <h1>Aanmaken van product</h1>
@@ -49,6 +52,7 @@
                 <button class="btn_Card" type="submit">Product aanmaken</button>
         </section>
     </main>
+    @endif
     @include('components.footer')
 </body>
 </html>

@@ -6,6 +6,12 @@
 </head>
 <body class="wrapper" id="mijnprofiel">
     @include('components.header')
+
+    @if (auth()->user()->blocked == 1)
+        <p>U bent geblokkeerd door de beheerder</p>
+        <a href="/logout">Terug naar inlogpagina</a>
+    @else
+    <a href="/logout">Uitloggen</a>
     <main class="profielmain">
         <a href="/create">Maak nieuw product aan</a>
         <h2>Jouw producten</h2>
@@ -60,6 +66,7 @@
             @endforeach
         </section>
     </main>
+    @endif
     @include('components.footer')
 </body>
 </html>

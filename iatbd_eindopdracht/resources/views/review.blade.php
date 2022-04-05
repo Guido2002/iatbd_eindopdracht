@@ -6,7 +6,10 @@
 </head>
 <body class="wrapper">
     @include('components.header')
-
+    @if (auth()->user()->blocked == 1)
+    <p>U bent geblokkeerd door de beheerder</p>
+    <a href="/logout">Terug naar inlogpagina</a>
+    @else
     <main>
         <section class="center center_review">
             <h1>Recensie schrijven</h1>
@@ -26,6 +29,7 @@
                 <button class="btn_Card" type="submit">Recensie versturen</button>
         </section>
     </main>
+    @endif
     @include('components.footer')
 </body>
 </html>

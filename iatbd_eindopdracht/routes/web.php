@@ -17,9 +17,13 @@ Route::get('/', function () {
     return redirect('login');
 });
 
-Route::middleware(['auth,Admin'])->group(function() {
-    Route::get('/block', [\App\Http\Controllers\UserController::class, 'block']);
-    Route::post('/block/save', [\App\Http\Controllers\UserController::class, 'store']);
+Route::middleware(['auth','admin'])->group(function() {
+    Route::get('/block', [\App\Http\Controllers\UserController::class, 'showBlock']);
+    Route::post('/blocked', [\App\Http\Controllers\UserController::class, 'block']);
+});
+
+Route::middleware(['auth','1'])->group(function() {
+    return redirect('login');
 });
 
 Route::middleware(['auth'])->group(function() {

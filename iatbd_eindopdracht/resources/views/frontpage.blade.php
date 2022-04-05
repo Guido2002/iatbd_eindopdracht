@@ -6,12 +6,16 @@
 </head>
 <body class="wrapper" >
     @include('components.header')
-    <a href="/mijnprofiel">{{auth()->user()->name}}</a>
+    @if (auth()->user()->blocked == 1)
+        <p>U bent geblokkeerd door de beheerder</p>
+        <a href="/logout">Terug naar inlogpagina</a>
+    @else
 
+    <a href="/mijnprofiel">{{auth()->user()->name}}</a>
     <main>
         <section class="mijnproducten">
             @foreach ($items as $item)
-            @if ($login_user != $item->id_lender)
+            @if ($login_user != $item->id_lender && $item->loaned == 0 || $login_user == $item->id_borrower && $item->loaned == 0)
             <section class="item_card">
                 <figure class="figure_img"><img class="item_img" src="{{$item->image}}" alt="$item->item_name"></figure>
                     <h2>{{$item->item_name}}</h2>
@@ -25,6 +29,7 @@
         @endforeach
         </section>
     </main>
+    @endif
     @include('components.footer')
 </body>
 </html>
