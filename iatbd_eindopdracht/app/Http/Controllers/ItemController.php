@@ -27,12 +27,14 @@ class ItemController extends Controller
     public function mijnprofiel() {
 
         $login_user = Auth::id();
+        $users = \App\Models\User::all();
         $review = \App\Models\Review::all();
 
         return view('mijnprofiel', [
             'items' => \App\Models\Item::all(),
             'login_user' => $login_user,
             'reviews' => $review,
+            'users' => $users,
         ]);
     }
 

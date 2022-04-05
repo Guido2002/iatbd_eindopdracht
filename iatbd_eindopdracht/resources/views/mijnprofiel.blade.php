@@ -6,11 +6,8 @@
 </head>
 <body class="wrapper" id="mijnprofiel">
     @include('components.header')
-
-    <h2>Mijn Profiel</h2>
-
     <main class="profielmain">
-        <h3>Jouw producten</h3>
+        <h2>Jouw producten</h2>
         <section class="mijnproducten">
             @foreach ($items as $item)
             @if ($item->id_lender == $login_user)
@@ -29,8 +26,8 @@
         <p>Je hebt momenteel geen producten</p>
         @endif
         </section>
-        <section>
-            <h3>Producten die momenteelt leent</h3>
+        <h2>Producten die momenteelt leent</h2>
+        <section class="mijnproducten">
             @foreach ($items as $item)
             @if ($item->id_borrower == $login_user)
                 <section class="item_card">
@@ -40,17 +37,24 @@
                         <p>Categorie: {{$item->kind}}</p>
                         <p>Hoeveel dagen leenbaar: {{$item->time_loaned}} dagen</p>
                     </div>
-                    <a href="/item/{{$item->id}}"> Bekijk dit product!</a>
+                    <a  href="/item/{{$item->id}}"> Bekijk dit product!</a>
                 </section>
                 @endif
         @endforeach
         </section>
-        <section>
-            <h3>Reviews</h3>
-            @foreach ($reviews as $review)
+        <h2>Reviews</h2>
+        <section class="mijnreviews">
+                @foreach ($reviews as $review)
                 @if ($review->reader == $login_user)
+                <div class="mijnreview">
                     <p>{{$review->review}}</p>
-                    <p>Cijfer voor het lenen van product: {{$review->cijfer}}</p>
+                    <p>Cijfer: {{$review->cijfer}}</p>
+                    @foreach ($users as $user)
+                        @if ($review->writer == $user->id)
+                            <p>Geschreven door {{$user->name}}</p>
+                        @endif
+                    @endforeach
+                </div>
                 @endif
             @endforeach
         </section>

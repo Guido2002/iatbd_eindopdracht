@@ -32,6 +32,14 @@ h1 {
 
 h2 {
     color: var(--color3);
+    background-color: var(--color8);
+    border-radius: 0.5rem 0.5rem;
+}
+
+h3 {
+    color: var(--color3);
+    background-color: var(--color8);
+    border-radius: 0.5rem 0.5rem;
 }
 
 .h1 {
@@ -85,7 +93,7 @@ a {
     font-size: 24px;
     display: grid;
     align-items: center;
-    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
 }
 
 .item_img {
@@ -98,7 +106,7 @@ a {
 .item_card {
     background-color: var(--color8);
     margin: 10px;
-    height: 42rem;
+    height: 35rem;
     border-radius: 10px;
 }
 
@@ -108,12 +116,7 @@ div .item_card {
     height: 13rem;
 }
 
-div .btn_Card {
-    justify-content: flex-end;
-    display: flex;
-}
-
-.btn_Card {
+.item_card a {
     background-color: var(--color9); /* Green */
     border-radius: 1rem 1rem;
     bottom: 0;
@@ -171,4 +174,33 @@ form .txt_field {
     text-align:left;
     color: var(--color1);
     font-size: 1.2rem;
+}
+
+.wrapper > a {
+    background-color: var(--color8); /* Green */
+    border-radius: 0.5rem 0.5rem;
+    bottom: 0;
+    color: var(--color1);
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 1.2rem;
+}
+
+.mijnreview {
+    background-color: var(--color6);
+    padding: 20px 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 1rem 1rem;
+}
+
+.mijnreviews {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.center_review {
+    height: 25vh;
 }
