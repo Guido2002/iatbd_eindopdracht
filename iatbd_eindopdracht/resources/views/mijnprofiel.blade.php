@@ -4,17 +4,17 @@
     @include('components.head')
     <title>Profiel van {{auth()->user()->name}}</title>
 </head>
-<body class="wrapper">
+<body class="wrapper" id="mijnprofiel">
     @include('components.header')
 
     <h2>Mijn Profiel</h2>
 
-    <main class="main">
-        <section>
-            <h3>Jouw producten</h3>
+    <main class="profielmain">
+        <h3>Jouw producten</h3>
+        <section class="mijnproducten">
             @foreach ($items as $item)
             @if ($item->id_lender == $login_user)
-                <section class="item_card">
+                <section class="item_card item_profiel">
                     <figure><img class="item_img" src="{{$item->image}}" alt="$item->item_name"></figure>
                     <div>
                         <h2>{{$item->item_name}}</h2>

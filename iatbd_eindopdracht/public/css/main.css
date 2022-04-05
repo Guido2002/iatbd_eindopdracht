@@ -83,7 +83,6 @@ a {
     background-color: var(--color7);
     height:  300px;
     font-size: 24px;
-    margin: 2rem;
     display: grid;
     align-items: center;
     grid-template-columns: 1fr 1fr 1fr ;
@@ -92,24 +91,84 @@ a {
 .item_img {
     height: 20rem;
     width: 20rem;
+    border-radius: 1rem 1rem;
+    filter: grayscale(0.6);
 }
 
 .item_card {
     background-color: var(--color8);
-    width: 90%;
     margin: 10px;
-    height: 40rem;
+    height: 42rem;
     border-radius: 10px;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
+}
+
+div .item_card {
     display: flex;
-    -webkit-flex-direction: row;
-    -moz-flex-direction: row;
-    flex: 2;
-    flex-direction: row;
+    flex-direction: column;
+    height: 13rem;
+}
+
+div .btn_Card {
+    justify-content: flex-end;
+    display: flex;
+}
+
+.btn_Card {
+    background-color: var(--color9); /* Green */
+    border-radius: 1rem 1rem;
+    bottom: 0;
+    color: var(--color1);
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 1.2rem;
+}
+
+.mijnproducten {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.center {
+    background-color: var(--color6);
+    width: 60vh;
+    height: 50vh;
+    border-radius: 1rem 1rem;
+}
+
+.center h1 {
+    text-align: center;
+    padding: 10px 0 20px 0;
+    border-bottom: 1px solid silver;
+}
+
+.center form {
+    padding: 40px;
+    padding-top: 0px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
     justify-content: space-between;
-    align-items: stretch;
-    flex-wrap: wrap;
+    flex-direction: column;
+
+}
+
+form .txt_field {
+    position: relative;
+    width: 100%;
+}
+
+.txt_field input, .txt_field select {
+    width: 100%;
+    height: 3vh;
+    border-radius: 5px 5px;
+    margin-bottom: 10px;
+}
+
+ label {
+    display: block;
+    text-align:left;
+    color: var(--color1);
+    font-size: 1.2rem;
 }

@@ -11,13 +11,13 @@
     <main class="main">
         @foreach ($items as $item)
             <section class="item_card">
-                <figure><img class="item_img" src="{{$item->image}}" alt="$item->item_name"></figure>
+                <figure class="figure_img"><img class="item_img" src="{{$item->image}}" alt="$item->item_name"></figure>
                 <div>
                     <h2>{{$item->item_name}}</h2>
                     <p>Categorie: {{$item->kind}}</p>
                     <p>Hoeveel dagen leenbaar: {{$item->time_loaned}} dagen</p>
                 </div>
-                <a href="/item/{{$item->id}}"> Bekijk dit product!</a>
+                <a class="btn_Card "href="/item/{{$item->id}}"> Bekijk dit product!</a>
             </section>
         @endforeach
     </main>

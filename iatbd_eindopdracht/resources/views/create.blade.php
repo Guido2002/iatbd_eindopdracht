@@ -8,34 +8,46 @@
     @include('components.header')
     <a href="/mijnprofiel">{{auth()->user()->name}}</a>
 
-    <main class="main">
-        <form action="/items" method="POST">
-            @csrf
+    <main>
+        <section class="center">
+            <h1>Aanmaken van product</h1>
+            <form action="/items" method="POST">
+                @csrf
+                <div class="txt_field">
+                    <label for="name" id="lb"> Naam: </label>
+                    <input name="name" id="name" type="text" required>
+                </div>
 
-            <label for="name"> Naam </label>
-            <input name="name" id="name" type="text">
+                <div class="txt_field">
+                    <label for="kind">Soort: </label>
+                <select name="kind" id="kind" required>
+                    @foreach ($kind_of_item as $kind_of_item)
+                        <option value="{{$kind_of_item->kind}}">{{$kind_of_item->kind}}</option>
+                    @endforeach
+                </select>
+                </div>
 
-            <label for="kind">Soort </label>
-            <select name="kind" id="kind">
-                @foreach ($kind_of_item as $kind_of_item)
-                    <option value="{{$kind_of_item->kind}}">{{$kind_of_item->kind}}</option>
-                @endforeach
-            </select>
+                <div class="txt_field">
+                    <label for="description"> Omschrijving: </label>
+                    <input name="description" id="description" type="text" required>
+                </div>
 
-            <label for="description"> Description </label>
-            <input name="description" id="description" type="text">
+                <div class="txt_field">
+                    <label for="image"> Afbeelding: </label>
+                <select name="image" id="image" required>
+                    @foreach ($items as $item)
+                        <option value="{{$item->image}}">{{$item->image}}</option>
+                    @endforeach
+                </select>
+                </div>
 
-            <label for="image"> Afbeelding </label>
-            <select name="image" id="image">
-                @foreach ($items as $item)
-                    <option value="{{$item->image}}">{{$item->image}}</option>
-                @endforeach
-            </select>
+                <div class="txt_field">
+                    <label for="leentijd"> Leentijd in dagen: </label>
+                    <input name="leentijd" id="leentijd" type="number" min="1" max="365" required>
+                </div>
 
-            <label for="leentijd"> Leentijd in dagen </label>
-            <input name="leentijd" id="leentijd" type="text">
-
-            <button type="submit">Film aanmaken</button>
+                <button class="btn_Card" type="submit">Film aanmaken</button>
+        </section>
     </main>
     @include('components.footer')
 </body>
