@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             KindOfItemTableSeeder::class,
             ItemsTableSeeder::class,
             ReviewsTableSeeder::class,
+            RequestsTableSeeder::class,
         ]);
     }
 }

@@ -14,6 +14,7 @@
     <a href="/logout">Uitloggen</a>
     <a href="/block">Blokkeren</a>
     <a href="/delete">Verwijderen</a>
+    @endif
     <main class="profielmain">
         <a href="/create">Maak nieuw product aan</a>
         <h2>Jouw producten</h2>
@@ -67,8 +68,28 @@
                 @endif
             @endforeach
         </section>
+        <h2>Verzoeken</h2>
+        <section class="mijnreviews">
+                @foreach ($requests as $request)
+                    @if ($request->reader == $login_user && $request->confirmed == 0)
+                    <div class="mijnreview">
+                        @foreach ($users as $user)
+                            @if ($request->user_id == $user->id)
+                                <p>Verzoek door {{$user->name}}</p>
+                            @endif
+                        @endforeach
+                        @foreach ($items as $item)
+                            @if ($request->item_id == $item->id)
+                                <p>Voor product {{$item->item_name}}</p>
+                                <a href="/geleend/{{$item->id_lender}}&{{$item->id}}&{{$request->id}}">V</a>
+                                <a href="/delete/request&{{$request->id}}">X</a>
+                            @endif
+                        @endforeach
+                    @endif
+                @endforeach
+                </div>
+        </section>
     </main>
-    @endif
     @include('components.footer')
 </body>
 </html>

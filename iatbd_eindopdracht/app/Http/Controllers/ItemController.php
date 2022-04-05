@@ -33,12 +33,14 @@ class ItemController extends Controller
         $login_user = Auth::id();
         $users = \App\Models\User::all();
         $review = \App\Models\Review::all();
+        $requests = \App\Models\Request::all();
 
         return view('mijnprofiel', [
             'items' => \App\Models\Item::all(),
             'login_user' => $login_user,
             'reviews' => $review,
             'users' => $users,
+            'requests' => $requests,
         ]);
     }
 
@@ -62,11 +64,15 @@ class ItemController extends Controller
         return redirect('/items');
     }
 
-    public function lenen( $id) {
-        $item = \App\Models\Item::find($id);
+    public function lenen( $userId,$itemId, $requestId) {
+
+        $item = \App\Models\Item::find($itemId);
+        $request = \App\Models\Request::find($requestId);
+        $request->confirmed = 1;
         $item->loaned = 1;
-        $item->id_borrower = auth()->id();
+        $item->id_borrower =  $request->user_id;
         $item->save();
+        $request->delete();
 
         return redirect("/mijnprofiel");
     }

@@ -37,7 +37,7 @@
                 @elseif ($login_user ==  $item->id_lender && $item->loaned == 1)
                         <button>arie</button>
                 @elseif($login_user !=  $item->id_lender && $item->loaned == 0)
-                    <a href="/geleenditem/{{$item->id}}">Leen product</a>
+                    <a href="/geleenditem/{{$login_user}}&{{$item->id}}">Leen product</a>
                 @endif
         @endif
     </main>
