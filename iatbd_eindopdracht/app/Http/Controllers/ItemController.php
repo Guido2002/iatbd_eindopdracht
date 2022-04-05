@@ -8,8 +8,12 @@ use Illuminate\Support\Facades\Auth;
 class ItemController extends Controller
 {
     public function index() {
+
+        $login_user = Auth::id();
+
         return view('frontpage', [
             'items' => \App\Models\Item::all(),
+            'login_user' => $login_user,
         ]);
     }
 
@@ -65,5 +69,9 @@ class ItemController extends Controller
         $item->save();
 
         return redirect("/mijnprofiel");
+    }
+
+    public function home() {
+        return redirect('login');
     }
 }

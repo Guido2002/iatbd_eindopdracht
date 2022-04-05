@@ -46,7 +46,7 @@
                     <input name="leentijd" id="leentijd" type="number" min="1" max="365" required>
                 </div>
 
-                <button class="btn_Card" type="submit">Film aanmaken</button>
+                <button class="btn_Card" type="submit">Product aanmaken</button>
         </section>
     </main>
     @include('components.footer')

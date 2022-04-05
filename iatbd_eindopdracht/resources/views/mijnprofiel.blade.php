@@ -7,6 +7,7 @@
 <body class="wrapper" id="mijnprofiel">
     @include('components.header')
     <main class="profielmain">
+        <a href="/create">Maak nieuw product aan</a>
         <h2>Jouw producten</h2>
         <section class="mijnproducten">
             @foreach ($items as $item)
@@ -16,7 +17,7 @@
                     <h2>{{$item->item_name}}</h2>
                     <div class="text">
                         <p>Categorie: {{$item->kind}}</p>
-                        <p>Hoeveel dagen leenbaar: {{$item->time_loaned}} dagen</p>
+                        <p>Hoeveel dagen leenbaar: {{$item->time_loaned}}</p>
                     </div>
                     <a href="/item/{{$item->id}}"> Bekijk dit product!</a>
                 </section>
@@ -35,7 +36,7 @@
                     <h2>{{$item->item_name}}</h2>
                     <div class="text">
                         <p>Categorie: {{$item->kind}}</p>
-                        <p>Hoeveel dagen leenbaar: {{$item->time_loaned}} dagen</p>
+                        <p>Hoeveel dagen leenbaar: {{$item->time_loaned}}</p>
                     </div>
                     <a  href="/item/{{$item->id}}"> Bekijk dit product!</a>
                 </section>

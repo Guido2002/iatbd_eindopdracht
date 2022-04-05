@@ -17,16 +17,14 @@ Route::get('/', function () {
     return redirect('login');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
 Route::middleware(['auth,Admin'])->group(function() {
     Route::get('/block', [\App\Http\Controllers\UserController::class, 'block']);
     Route::post('/block/save', [\App\Http\Controllers\UserController::class, 'store']);
 });
 
 Route::middleware(['auth'])->group(function() {
+    Route::get('/', [\App\Http\Controllers\ItemController::class, 'index']);
+    Route::get('/logout', [\App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'destroy']);
     Route::get('/items', [\App\Http\Controllers\ItemController::class, 'index']);
     Route::get('/item/{id}', [\App\Http\Controllers\ItemController::class, 'show']);
     Route::post('/items', [\App\Http\Controllers\ItemController::class, 'store']);

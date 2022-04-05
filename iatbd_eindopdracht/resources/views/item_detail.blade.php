@@ -21,7 +21,7 @@
                 @endif
             @endforeach
             <p>Categorie: {{$item->kind}}</p>
-            <p>Dagen leenbaar: {{$item->time_loaned}} dagen</p>
+            <p>Dagen leenbaar: {{$item->time_loaned}}</p>
             @if ($item->loaned == 1)
                 <p>Dit item is al uitgeleend!</p>
             @else
@@ -31,8 +31,8 @@
             @if ($login_user == $item->id_borrower)
                 <a href="/review/{{$item->id_lender}}&{{$item->id}}">Retourneer</a>
             @elseif ($login_user ==  $item->id_lender && $item->loaned == 1)
-                    <p></p>
-            @else
+                    <button>arie</button>
+            @elseif($login_user !=  $item->id_lender && $item->loaned == 0)
                 <a href="/geleenditem/{{$item->id}}">Leen product</a>
             @endif
     </main>
