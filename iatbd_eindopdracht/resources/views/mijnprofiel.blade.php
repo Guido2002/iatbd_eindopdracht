@@ -12,6 +12,8 @@
         <a href="/logout">Terug naar inlogpagina</a>
     @else
     <a href="/logout">Uitloggen</a>
+    <a href="/block">Blokkeren</a>
+    <a href="/delete">Verwijderen</a>
     <main class="profielmain">
         <a href="/create">Maak nieuw product aan</a>
         <h2>Jouw producten</h2>

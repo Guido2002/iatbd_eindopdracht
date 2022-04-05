@@ -71,6 +71,20 @@ class ItemController extends Controller
         return redirect("/mijnprofiel");
     }
 
+    public function deleteProduct() {
+        return view('delete', [
+            'items' => \App\Models\Item::all(),
+        ]);
+    }
+
+    public function delete(Request $request) {
+        $input = $request->get('item');
+            $item = \App\Models\Item::find($input);
+            $item->delete();
+
+            return redirect('/mijnprofiel');
+    }
+
     public function home() {
         return redirect('login');
     }

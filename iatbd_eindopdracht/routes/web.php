@@ -20,6 +20,8 @@ Route::get('/', function () {
 Route::middleware(['auth','admin'])->group(function() {
     Route::get('/block', [\App\Http\Controllers\UserController::class, 'showBlock']);
     Route::post('/blocked', [\App\Http\Controllers\UserController::class, 'block']);
+    Route::get('/delete', [\App\Http\Controllers\ItemController::class, 'deleteProduct']);
+    Route::post('/deleted', [\App\Http\Controllers\ItemController::class, 'delete']);
 });
 
 Route::middleware(['auth','1'])->group(function() {

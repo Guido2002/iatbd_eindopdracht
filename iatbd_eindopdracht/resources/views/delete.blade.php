@@ -12,21 +12,21 @@
     @else
     <main>
         <section class="center center_review">
-            <h1>Blokkeren</h1>
-            <form action="/blocked" method="POST">
+            <h1>Product verwijderen</h1>
+            <form action="/deleted" method="POST">
                 @csrf
 
                 <div class="txt_field">
-                    <label for="user">Gebruiker:</label>
-                <select name="user" id="user" required>
-                    @foreach ($users as $user)
-                        <option value="{{$user->id}}">{{$user->name}}</option>
+                    <label for="item">Product:</label>
+                <select name="item" id="item" required>
+                    @foreach ($items as $item)
+                        <option value="{{$item->id}}">{{$item->item_name}}</option>
                     @endforeach
                 </select>
                 </div>
 
 
-                <button class="btn_Card" type="submit">Blokkeren</button>
+                <button class="btn_Card" type="submit">Verwijderen</button>
         </section>
     </main>
     @endif
