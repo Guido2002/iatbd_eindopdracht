@@ -17,14 +17,14 @@ class ItemsTableSeeder extends Seeder
 
         $cassette_array = ["Avonturen met Bassie en Adriaan", "Bassie en Adriaan", "Bassie en Adriaan Als Geheime Agenten",
                                     "Feest Met Bassie & Adriaan", "Sprookjes verteld door Bassie & Adriaan", "De Leukste Liedjes van Bassie & Adriaan", "Circus Bassie & Adriaan",
-                                    "Radio Station Bassie & Adriaan", "Bassie en Adriaan En De Reis Vol Verrassingen", "De Leukste Liedjes van Bassie & Adriaan", "Bassie en Adriaan op Schattenjacht", "Bassie en Adriaan Live!", "60 Liedjes uit Grootmoeders Tijd"];
+                                    "Radio Station Bassie & Adriaan", "De Leukste Liedjes van Bassie & Adriaan", "Bassie en Adriaan op Schattenjacht", "Bassie en Adriaan Live!", "60 Liedjes uit Grootmoeders Tijd"];
 
         foreach ($cassette_array as $cassette) {
             DB::table('items')->insert([
                 'item_name' => $cassette,
                 'kind' => "cassette",
                 'image' => "/img/cassette/" . str_replace(' ', '', $cassette) . ".jpg",
-                'description' => "Hierboven ziet u het product " . $cassette,
+                'description' => "Hierboven ziet u het cassettebandje " . $cassette. ".",
                 'time_loaned' => rand(2,10),
                 'id_lender' => 1,
             ]);

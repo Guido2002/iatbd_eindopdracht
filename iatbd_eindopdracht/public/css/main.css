@@ -26,6 +26,11 @@ p{
     font-size: 18px;
 }
 
+img {
+    filter: grayscale(0.4);
+    border-radius: 0.5rem 0.5rem;
+}
+
 h1 {
     color: var(--color2);
 }
@@ -101,6 +106,7 @@ a {
     width: 20rem;
     border-radius: 1rem 1rem;
     filter: grayscale(0.6);
+    object-fit: cover;
 }
 
 .item_card {
@@ -203,4 +209,14 @@ form .txt_field {
 
 .center_review {
     height: 25vh;
+}
+
+.textbox {
+    background-color: var(--color7);
+    padding: 10px 10px;
+    border-radius: 0.5rem 0.5rem;
+}
+
+.text {
+    padding-left: 18%;
 }

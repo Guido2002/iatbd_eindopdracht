@@ -12,7 +12,8 @@
         <section>
             <figure><img src="{{$item->image}}" alt="{{$item->item_name}}"></figure>
         </section>
-        <div>
+        <div class="textbox">
+            <p>{{$item->description}}</p>
             @foreach ($users as $user)
                 @if ($user->id == $item->id_lender)
                     <p>Aangeboden door: {{$user->name}}</p>
@@ -21,17 +22,16 @@
             @endforeach
             <p>Categorie: {{$item->kind}}</p>
             <p>Dagen leenbaar: {{$item->time_loaned}} dagen</p>
-            @if ($item->is_loaned == 1)
+            @if ($item->loaned == 1)
                 <p>Dit item is al uitgeleend!</p>
             @else
                 <p>Dit item is nog niet uitgeleend!</p>
             @endif
         </div>
             @if ($login_user == $item->id_borrower)
-                <p>Dit item is al uitgeleend!</p>
                 <a href="/review/{{$item->id_lender}}&{{$item->id}}">Retourneer</a>
-            @elseif ($login_user ==  $item->id_lender || $item->is_loaned == 1)
-                
+            @elseif ($login_user ==  $item->id_lender && $item->loaned == 1)
+                    <p></p>
             @else
                 <a href="/geleenditem/{{$item->id}}">Leen product</a>
             @endif

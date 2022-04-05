@@ -14,12 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('login');
 });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::middleware(['auth,Admin'])->group(function() {
+    Route::get('/block', [\App\Http\Controllers\UserController::class, 'block']);
+    Route::post('/block/save', [\App\Http\Controllers\UserController::class, 'store']);
+});
 
 Route::middleware(['auth'])->group(function() {
     Route::get('/items', [\App\Http\Controllers\ItemController::class, 'index']);

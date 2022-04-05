@@ -13,8 +13,8 @@
             @if ($item->id_lender == $login_user)
                 <section class="item_card item_profiel">
                     <figure><img class="item_img" src="{{$item->image}}" alt="$item->item_name"></figure>
-                    <div>
-                        <h2>{{$item->item_name}}</h2>
+                    <h2>{{$item->item_name}}</h2>
+                    <div class="text">
                         <p>Categorie: {{$item->kind}}</p>
                         <p>Hoeveel dagen leenbaar: {{$item->time_loaned}} dagen</p>
                     </div>
@@ -26,14 +26,14 @@
         <p>Je hebt momenteel geen producten</p>
         @endif
         </section>
-        <h2>Producten die momenteelt leent</h2>
+        <h2>Producten die u momenteelt leent</h2>
         <section class="mijnproducten">
             @foreach ($items as $item)
             @if ($item->id_borrower == $login_user)
-                <section class="item_card">
+                <section class="item_card item_profiel">
                     <figure><img class="item_img" src="{{$item->image}}" alt="{{$item->item_name}}"></figure>
-                    <div>
-                        <h2>{{$item->item_name}}</h2>
+                    <h2>{{$item->item_name}}</h2>
+                    <div class="text">
                         <p>Categorie: {{$item->kind}}</p>
                         <p>Hoeveel dagen leenbaar: {{$item->time_loaned}} dagen</p>
                     </div>
