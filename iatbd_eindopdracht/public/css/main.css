@@ -243,3 +243,41 @@ form .txt_field {
     display: block;
   }
 
+  /* Responsive */
+
+@media only screen and (max-width: 1800px) {
+    .mijnproducten {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  @media only screen and (max-width: 1400px) {
+    .mijnproducten {
+        grid-template-columns: 1fr 1fr;
+      }
+    .item_card h2 {
+        font-size: 1.1rem;
+    }
+    .item_card p {
+        font-size: 0.8rem;
+    }
+
+    .item_card {
+        height: 40vh;
+    }
+
+    .item_card img {
+        width: 10rem;
+        height: 10rem;
+    }
+  }
+
+  @media only screen and (max-width: 650px) {
+    .mijnproducten {
+        grid-template-columns: 1fr;
+        align-items: stretch;
+      }
+
+
+}
+
