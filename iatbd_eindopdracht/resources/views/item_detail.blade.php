@@ -13,9 +13,8 @@
         <a href="/mijnprofiel">{{auth()->user()->name}}</a>
         <main>
             <h2>{{$item->item_name}}</h2>
-            <section>
+            <section class="item_detail">
                 <figure><img src="{{$item->image}}" alt="{{$item->item_name}}"></figure>
-            </section>
             <div class="textbox">
                 <p>{{$item->description}}</p>
                 @foreach ($users as $user)
@@ -34,12 +33,11 @@
             </div>
                 @if ($login_user == $item->id_borrower)
                     <a href="/review/{{$item->id_lender}}&{{$item->id}}">Retourneer</a>
-                @elseif ($login_user ==  $item->id_lender && $item->loaned == 1)
-                        <button>arie</button>
                 @elseif($login_user !=  $item->id_lender && $item->loaned == 0)
                     <a href="/geleenditem/{{$login_user}}&{{$item->id}}">Leen product</a>
                 @endif
         @endif
+    </section>
     </main>
     @include("components.footer")
 </body>

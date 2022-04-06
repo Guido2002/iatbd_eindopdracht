@@ -17,7 +17,7 @@
             <button class="btn" onclick="filterSelection('cassette')"> Cassette </button>
             <button class="btn" onclick="filterSelection('toetsenborden')"> Toetsenborden</button>
             <button class="btn" onclick="filterSelection('kinderspeelgoed')"> Kinderspeelgoed</button>
-            <button class="btn" onclick="filterSelection('colors')"> Games </button>
+            <button class="btn" onclick="filterSelection('games')"> Games </button>
         </div>
         <section class="mijnproducten">
             @foreach ($items as $item)

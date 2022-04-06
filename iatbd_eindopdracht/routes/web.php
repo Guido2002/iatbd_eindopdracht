@@ -39,7 +39,7 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/delete/request&{requestId}', [\App\Http\Controllers\RequestsController::class, 'deleteRequest']);
     Route::get('/geleenditem/{userId}&{itemId}', [\App\Http\Controllers\RequestsController::class, 'storeRequest']);
     Route::get('/geleend/{userId}&{itemId}&{requestId}', [\App\Http\Controllers\ItemController::class, 'lenen']);
-    Route::get('/geleenditems/{userId}&{itemId}', [\App\Http\Controllers\ReviewController::class, 'review']);
+    Route::get('/review/{userId}&{itemId}', [\App\Http\Controllers\ReviewController::class, 'review']);
     Route::post('/items/{userId}&{itemId}', [\App\Http\Controllers\ReviewController::class, 'storeReview']);
 });
 

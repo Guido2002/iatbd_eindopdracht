@@ -34,9 +34,6 @@
                 </section>
                 @endif
         @endforeach
-        @if ($item->id_lender != $login_user)
-        <p>Je hebt momenteel geen producten</p>
-        @endif
         </section>
         <h2>Producten die u momenteelt leent</h2>
         <section class="mijnproducten">

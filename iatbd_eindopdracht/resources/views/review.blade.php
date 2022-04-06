@@ -11,7 +11,7 @@
     <a href="/logout">Terug naar inlogpagina</a>
     @else
     <main>
-        <section class="center center_review">
+        <section class="center center_review recensie">
             <h1>Recensie schrijven</h1>
             <form action="/items/{{$userId}}&{{$itemId}}" method="POST">
                 @csrf

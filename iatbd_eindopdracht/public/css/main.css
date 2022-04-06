@@ -117,6 +117,10 @@ a {
     display: none;
 }
 
+.item_profiel {
+    display: block;
+}
+
 div .item_card {
     display: flex;
     flex-direction: column;
@@ -243,7 +247,11 @@ form .txt_field {
     display: block;
   }
 
-  /* Responsive */
+  .recensie {
+      height: 30vh;
+  }
+
+  /* -----------------------------------------------------Responsive--------------------------------------------------------- */
 
 @media only screen and (max-width: 1800px) {
     .mijnproducten {
@@ -262,7 +270,7 @@ form .txt_field {
         font-size: 0.8rem;
     }
 
-    .item_card {
+    .item_card, .item_profiel {
         height: 40vh;
     }
 
@@ -270,6 +278,15 @@ form .txt_field {
         width: 10rem;
         height: 10rem;
     }
+
+    .item_detail{
+        width: 30rem;
+    }
+
+    .item_detail>figure>img {
+        height: 40vh;
+    }
+
   }
 
   @media only screen and (max-width: 650px) {
@@ -278,6 +295,17 @@ form .txt_field {
         align-items: stretch;
       }
 
+      .center {
+          width: 40vh;
+      }
+
+      .item_detail{
+        width: 22rem;
+    }
+
+    .item_detail>figure>img {
+        height: 30vh;
+    }
 
 }
 
