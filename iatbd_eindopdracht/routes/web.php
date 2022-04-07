@@ -20,8 +20,6 @@ Route::get('/', function () {
 Route::middleware(['auth','admin'])->group(function() {
     Route::get('/block', [\App\Http\Controllers\UserController::class, 'showBlock']);
     Route::post('/blocked', [\App\Http\Controllers\UserController::class, 'block']);
-    Route::get('/delete', [\App\Http\Controllers\ItemController::class, 'deleteProduct']);
-    Route::post('/deleted', [\App\Http\Controllers\ItemController::class, 'delete']);
 });
 
 Route::middleware(['auth','1'])->group(function() {
@@ -30,6 +28,8 @@ Route::middleware(['auth','1'])->group(function() {
 
 Route::middleware(['auth'])->group(function() {
     Route::get('/', [\App\Http\Controllers\ItemController::class, 'index']);
+    Route::get('/delete', [\App\Http\Controllers\ItemController::class, 'deleteProduct']);
+    Route::post('/deleted', [\App\Http\Controllers\ItemController::class, 'delete']);
     Route::get('/logout', [\App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'destroy']);
     Route::get('/items', [\App\Http\Controllers\ItemController::class, 'index']);
     Route::get('/item/{id}', [\App\Http\Controllers\ItemController::class, 'show']);

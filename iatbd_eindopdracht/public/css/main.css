@@ -57,6 +57,7 @@ h3 {
     align-self: center;
 }
 
+
 a, .btn_Card {
     font: bold 1.5rem;
     text-decoration: none;
@@ -90,17 +91,11 @@ a, .btn_Card {
     height: 400px;
     width: 99%;
     border-radius: 0px;
-    color: var(--color4);
+    color: var(--color9);
 }
 
-.main {
-    text-align: center;
-    background-color: var(--color7);
-    height:  300px;
-    font-size: 24px;
-    display: grid;
-    align-items: center;
-    grid-template-columns: 1fr 1fr 1fr 1fr ;
+main {
+    padding: 0px;
 }
 
 .item_img {
@@ -180,6 +175,10 @@ div .item_card {
 
 }
 
+.center_review form {
+    height: 15vh;
+}
+
 form .txt_field {
     position: relative;
     width: 100%;
@@ -197,6 +196,22 @@ form .txt_field {
     text-align:left;
     color: var(--color1);
     font-size: 1.2rem;
+}
+
+.funct_list {
+    padding: 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex-direction: row;
+}
+
+.funct {
+    padding: 20px;
+    text-align: center;
+}
+
+.funct:hover, a:hover {
+    opacity: 0.8;
 }
 
 .wrapper > a {
@@ -307,14 +322,16 @@ form .txt_field {
     .item_detail>figure>img {
         height: 40vh;
     }
-
   }
 
-  @media only screen and (max-width: 650px) {
-    .mijnproducten {
-        grid-template-columns: 1fr;
-        align-items: stretch;
+  @media only screen and (max-width: 750px) {
+      .item_card h2 {
+          font-size: 0.9rem;
       }
+  }
+
+
+  @media only screen and (max-width: 650px) {
 
       .center {
           width: 40vh;
@@ -332,8 +349,16 @@ form .txt_field {
         height: 65vh;
     }
 
+    .center_review {
+        height: 25vh;
+    }
+
     .center form {
      height: 30rem;
+    }
+
+    .center_review form {
+        height: 18vh;
     }
 
     #name, #kind, #description, #leentijd, #image {
@@ -345,5 +370,19 @@ form .txt_field {
         font-size: 0.8rem;
     }
 
-}
+@media only screen and (max-width: 550px) {
+    .mijnproducten {
+        grid-template-columns: 1fr;
+        align-items: stretch;
+        }
 
+        #myBtn {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+        .funct {
+            font-size: 0.7rem;
+        }
+    }
+}

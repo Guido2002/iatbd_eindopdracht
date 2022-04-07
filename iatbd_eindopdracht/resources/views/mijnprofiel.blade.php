@@ -2,18 +2,19 @@
 <html lang="nl">
 <head>
     @include('components.head')
-    <title>Profiel van {{auth()->user()->name}}</title>
+    <title>Mijn Profiel</title>
 </head>
 <body class="wrapper" id="mijnprofiel">
     @include('components.header')
-    @include("components.userchecker")
-    <div id="myBtn">
-        <button class="btn active" onclick="filterSelection('producten')"> Mijn Producten </button>
-        <button class="btn" onclick="filterSelection('leen')"> Geleende producten</button>
-        <button class="btn" onclick="filterSelection('reviews')"> Reviews</button>
-        <button class="btn" onclick="filterSelection('verzoeken')"> Verzoeken </button>
-    </div>
-    <main class="profielmain">
+    @include('components.userchecker')
+    @if (auth()->user()->blocked ==0)
+    <main class="items">
+        <div id="myBtn">
+            <button class="btn active" onclick="filterSelection('producten')"> Mijn Producten </button>
+            <button class="btn" onclick="filterSelection('leen')"> Geleende producten</button>
+            <button class="btn" onclick="filterSelection('reviews')"> Reviews</button>
+            <button class="btn" onclick="filterSelection('verzoeken')"> Verzoeken </button>
+        </div>
         <section class="filter producten">
             <section class="mijnproducten">
                 @foreach ($items as $item)
@@ -89,6 +90,7 @@
             </section>
         </section>
     </main>
+    @endif
     @include('components.footer')
 </body>
 </html>

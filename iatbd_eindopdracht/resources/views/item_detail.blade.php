@@ -10,7 +10,7 @@
         <p>U bent geblokkeerd door de beheerder</p>
         <a href="/logout">Terug naar inlogpagina</a>
     @else
-        <a href="/mijnprofiel">{{auth()->user()->name}}</a>
+        <a href="/mijnprofiel">Mijn Profiel</a>
         <main>
             <h2>{{$item->item_name}}</h2>
             <section class="item_detail">
@@ -32,9 +32,9 @@
                 @endif
             </div>
                 @if ($login_user == $item->id_borrower)
-                    <a href="/review/{{$item->id_lender}}&{{$item->id}}">Retourneer</a>
+                    <a class="funct show"  href="/review/{{$item->id_lender}}&{{$item->id}}">Retourneer</a>
                 @elseif($login_user !=  $item->id_lender && $item->loaned == 0)
-                    <a href="/geleenditem/{{$login_user}}&{{$item->id}}">Leen product</a>
+                    <a class="funct show" href="/geleenditem/{{$login_user}}&{{$item->id}}">Leen product</a>
                 @endif
         @endif
     </section>

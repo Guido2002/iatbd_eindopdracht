@@ -10,6 +10,7 @@
     <p>U bent geblokkeerd door de beheerder</p>
     <a href="/logout">Terug naar inlogpagina</a>
     @else
+    <a href="/mijnprofiel">Mijn Profiel</a>
     <main>
         <section class="center center_review">
             <h1>Blokkeren</h1>
@@ -20,7 +21,9 @@
                     <label for="user">Gebruiker:</label>
                 <select name="user" id="user" required>
                     @foreach ($users as $user)
-                        <option value="{{$user->id}}">{{$user->name}}</option>
+                    @if ($user->role != "admin")
+                    <option value="{{$user->id}}">{{$user->name}}</option>
+                    @endif
                     @endforeach
                 </select>
                 </div>

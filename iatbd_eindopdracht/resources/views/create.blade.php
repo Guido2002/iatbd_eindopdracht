@@ -10,7 +10,7 @@
     <p>U bent geblokkeerd door de beheerder</p>
     <a href="/logout">Terug naar inlogpagina</a>
     @else
-    <a href="/mijnprofiel">{{auth()->user()->name}}</a>
+    <a href="/mijnprofiel">Mijn Profiel</a>
     <main>
         <section class="center">
             <h1>Aanmaken van product</h1>
