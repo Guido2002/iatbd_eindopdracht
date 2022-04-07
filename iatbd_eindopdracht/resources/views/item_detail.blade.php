@@ -10,7 +10,6 @@
         <p>U bent geblokkeerd door de beheerder</p>
         <a href="/logout">Terug naar inlogpagina</a>
     @else
-        <a href="/mijnprofiel">Mijn Profiel</a>
         <main>
             <h2>{{$item->item_name}}</h2>
             <section class="item_detail">

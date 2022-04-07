@@ -10,7 +10,6 @@
     <p>U bent geblokkeerd door de beheerder</p>
     <a href="/logout">Terug naar inlogpagina</a>
     @else
-    <a href="/mijnprofiel">Mijn Profiel</a>
     <main>
         <section class="center center_review">
             <h1>Product verwijderen</h1>
