@@ -1,14 +1,21 @@
 @if (auth()->user()->role == "admin")
 <header class="header">
-    nav
-    <h1><a class="h1" href="/items">Time2Share</a></h1>
-    <h1><a class="h1" href="/mijnprofiel">Mijn Profiel</a></h1>
-    <h1><a class="h1" href="/logout">Logout</a></h1>
+    <div class="container">
+        <h1><a class="h1" href="/items">⌛</a></h1>
+        <h1><a class="h1" href="/create">💡</a></h1>
+        <h1><a class="h1" href="/mijnprofiel">🧔</a></h1>
+        <h1><a class="h1" href="/delete">❌</a></h1>
+        <h1><a class="h1" href="/block">💀</a></h1>
+        <h1><a class="h1" href="/logout">😴</a></h1>
+    </div>
 </header>
 @else
 <header class="header">
-    <h1><a class="h1" href="/items">Time2Share</a></h1>
-    <h1><a class="h1" href="/mijnprofiel">Mijn Profiel</a></h1>
-    <h1><a class="h1" href="/logout">Logout</a></h1>
+    <h1><a class="h1" href="/items">⌛</a></h1>
+    <h1><a class="h1" href="/create"></a>💡</h1>
+    <h1><a class="h1" href="/mijnprofiel">🧔</a></h1>
+    <h1><a class="h1" href="/delete">❌</a></h1>
+    <h1><a class="h1" href="/logout">😴</a></h1>
+    </div>
 </header>
 @endif

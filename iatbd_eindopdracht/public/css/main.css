@@ -89,12 +89,24 @@ a, .btn_Card {
     text-align: center;
 }
 
+.container{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+  }
+
 .footer {
     background-color: var(--color8);
     height: 400px;
     width: 99%;
     border-radius: 0px;
     color: var(--color9);
+}
+
+.container a {
+    width: auto;
+    height: auto;
 }
 
 main {
