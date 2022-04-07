@@ -20,6 +20,15 @@
     background-color: #F8F9FA;
 }
 
+body {
+    -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+  }
+
 p{
     color: var(--color7);
     text-align: left;

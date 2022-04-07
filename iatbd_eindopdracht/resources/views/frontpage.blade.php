@@ -10,7 +10,7 @@
         <p>U bent geblokkeerd door de beheerder</p>
         <a href="/logout">Terug naar inlogpagina</a>
     @else
-    <main class="items">
+    <main class="items example">
         <div id="myBtn">
             <button class="btn active" onclick="filterSelection('all')"> Alle items</button>
             <button class="btn" onclick="filterSelection('cassette')"> Cassette </button>
