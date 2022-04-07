@@ -5,9 +5,9 @@
     --color4: #CED4DA;
     --color5: #ADB5BD;
     --color6: #6C757D;
-    --color7: #495057;
-    --color8: #343A40;
-    --color9: #212529;
+    --color7: #333333;
+    --color8: #4D77FF;
+    --color9: #F8F9FA;
 }
 
 .wrapper {
@@ -17,11 +17,11 @@
     flex-flow: column;
     align-items: center;
     text-align: center;
-    background-color: var(--color9);
+    background-color: #F8F9FA;
 }
 
 p{
-    color: var(--color4);
+    color: var(--color7);
     text-align: left;
     font-size: 18px;
 }
@@ -39,6 +39,7 @@ h2 {
     color: var(--color3);
     background-color: var(--color8);
     border-radius: 0.5rem 0.5rem;
+    padding: 10px 10px;
 }
 
 h3 {
@@ -56,17 +57,18 @@ h3 {
     align-self: center;
 }
 
-a {
+a, .btn_Card {
     font: bold 1.5rem;
     text-decoration: none;
-    background-color: var(--color5);
-    color: #333333;
+    background-color: var(--color8);
+    color: var(--color9);
     border-top: 1px solid var(--color3);
     border-right: 1px solid var(--color9);
     border-bottom: 1px solid var(--color9);
     border-left: 1px solid var(--color3);
     display: flex;
     align-self: center;
+    border-radius: 0.5rem 0.5rem;
 }
 
 .wrapper > * {
@@ -110,11 +112,16 @@ a {
 }
 
 .item_card {
-    background-color: var(--color8);
+    background-color: var(--color9);
+    box-shadow: 2px 5px 2px 5px var(--color8);
     margin: 10px;
     height: 35rem;
     border-radius: 10px;
     display: none;
+}
+
+.item_card h2 {
+    padding: 0px;
 }
 
 .item_profiel {
@@ -127,8 +134,13 @@ div .item_card {
     height: 13rem;
 }
 
+.item_card h2 {
+    background: var(--color9);
+    color: var(--color7);
+}
+
 .item_card a {
-    background-color: var(--color9); /* Green */
+    background-color: var(--color8);
     border-radius: 1rem 1rem;
     bottom: 0;
     color: var(--color1);
@@ -145,7 +157,7 @@ div .item_card {
 }
 
 .center {
-    background-color: var(--color6);
+    background-color: var(--color8);
     width: 60vh;
     height: 50vh;
     border-radius: 1rem 1rem;
@@ -217,7 +229,7 @@ form .txt_field {
 }
 
 .textbox {
-    background-color: var(--color7);
+    background-color: var(--color9);
     padding: 10px 10px;
     border-radius: 0.5rem 0.5rem;
 }
@@ -227,30 +239,39 @@ form .txt_field {
 }
 
 .btn.active {
-    background-color: #666;
+    background-color: rgb(23, 66, 94);
     color: white;
   }
 
   .btn:hover {
-    background-color: #ddd;
+    background-color: rgb(23, 66, 94);
+  }
+
+  .item_detail {
+    box-shadow: 2px 5px 2px 5px var(--color8);
+    border-radius: 0.5rem 0.5rem;
   }
 
   .btn {
     border: none;
     outline: none;
     padding: 12px 16px;
-    background-color: #f1f1f1;
+    background-color: var(--color8);
     cursor: pointer;
-  }
-
-  .show {
-    display: block;
+    color: var(--color9);
   }
 
   .recensie {
       height: 30vh;
   }
 
+  .filter {
+      display: none;
+  }
+
+  .show {
+    display: block;
+  }
   /* -----------------------------------------------------Responsive--------------------------------------------------------- */
 
 @media only screen and (max-width: 1800px) {
@@ -305,6 +326,23 @@ form .txt_field {
 
     .item_detail>figure>img {
         height: 30vh;
+    }
+
+    .center {
+        height: 65vh;
+    }
+
+    .center form {
+     height: 30rem;
+    }
+
+    #name, #kind, #description, #leentijd, #image {
+        height: 5vh;
+        font-size: 1.2rem;
+    }
+
+    #image {
+        font-size: 0.8rem;
     }
 
 }

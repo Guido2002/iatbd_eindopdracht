@@ -18,7 +18,7 @@
                 @csrf
                 <div class="txt_field">
                     <label for="name" id="lb"> Naam: </label>
-                    <input name="name" id="name" type="text" required>
+                    <input name="name" id="name" type="text" placeholder="Vul hier productnaam in" required>
                 </div>
 
                 <div class="txt_field">
@@ -32,7 +32,7 @@
 
                 <div class="txt_field">
                     <label for="description"> Omschrijving: </label>
-                    <input name="description" id="description" type="text" required>
+                    <input name="description" id="description" placeholder="Vul hier de omschrijving in" type="text" required>
                 </div>
 
                 <div class="txt_field">
