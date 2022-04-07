@@ -250,17 +250,46 @@ form .txt_field {
 }
 
 .mijnreview {
-    background-color: var(--color6);
+    background-color: var(--color8);
+    border-color: var(--color9);
     padding: 20px 20px;
     padding-top: 5px;
     padding-bottom: 5px;
     border-radius: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 4px #aeb7d436;
+}
+
+.mijnreview p {
+    color: var(--color9);
+    border: #333333;
+}
+
+.mijnreview a {
+    width: 5vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#accept {
+    color: green;
+    background-color: var(--color9);
+}
+
+#decline {
+    color:red;
+    background-color: var(--color9);
 }
 
 .mijnreviews {
     display: grid;
-    gap: 10px;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    background-color: var(--color9);
+    margin: 40px;
+    gap: 40px;
 }
 
 .center_review {
@@ -347,6 +376,15 @@ form .txt_field {
     .mijnproducten {
         grid-template-columns: 1fr 1fr;
       }
+
+      .mijnreviews {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .mijnreviews p {
+        font-size: 1rem;
+    }
+
     .item_card h2 {
         font-size: 1.1rem;
     }
@@ -372,6 +410,22 @@ form .txt_field {
     }
   }
 
+  @media only screen and (max-width: 850px) {
+    .mijnreviews p {
+        font-size: 1rem;
+        margin-right: 15px;
+    }
+
+    .mijnreview a {
+        width: 20vw;
+        height: auto;
+    }
+
+    .mijnreviews {
+        grid-template-columns: 1fr;
+    }
+}
+
   @media only screen and (max-width: 750px) {
       .item_card h2 {
           font-size: 0.9rem;
@@ -384,6 +438,7 @@ form .txt_field {
       .center {
           width: 40vh;
       }
+
 
       .item_detail{
         width: 22rem;
@@ -398,7 +453,7 @@ form .txt_field {
     }
 
     .center_review {
-        height: 25vh;
+        height: 29vh;
     }
 
     .center form {

@@ -80,13 +80,13 @@
                             @foreach ($items as $item)
                                 @if ($request->item_id == $item->id)
                                     <p>Voor product {{$item->item_name}}</p>
-                                    <a href="/geleend/{{$item->id_lender}}&{{$item->id}}&{{$request->id}}">V</a>
-                                    <a href="/delete/request&{{$request->id}}">X</a>
+                                    <a id="accept" href="/geleend/{{$item->id_lender}}&{{$item->id}}&{{$request->id}}">V</a>
+                                    <a id="decline" href="/delete/request&{{$request->id}}">X</a>
+                                </div>
                                 @endif
                             @endforeach
                         @endif
                     @endforeach
-                    </div>
             </section>
         </section>
     </main>
