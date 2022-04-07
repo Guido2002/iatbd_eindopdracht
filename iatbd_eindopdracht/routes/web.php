@@ -17,6 +17,10 @@ Route::get('/', function () {
     return redirect('login');
 });
 
+Route::post('/register', function () {
+    return redirect('/mijnprofiel');
+});
+
 Route::middleware(['auth','admin'])->group(function() {
     Route::get('/block', [\App\Http\Controllers\UserController::class, 'showBlock']);
     Route::post('/blocked', [\App\Http\Controllers\UserController::class, 'block']);

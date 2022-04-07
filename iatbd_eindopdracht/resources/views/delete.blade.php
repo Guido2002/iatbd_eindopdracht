@@ -25,7 +25,7 @@
                     @endforeach
                     @elseif (auth()->user()->role == "user")
                     @foreach ($items as $item)
-                        @if (auth()->user()->id == $item->lender)
+                        @if (auth()->user()->id == $item->id_lender)
                         <option value="{{$item->id}}">{{$item->item_name}}</option>
                         @endif
                     @endforeach

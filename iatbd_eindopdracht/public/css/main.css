@@ -282,6 +282,10 @@ form .txt_field {
     border-radius: 0.5rem 0.5rem;
   }
 
+  .item_detail img {
+      margin-top: 10px;
+  }
+
   .btn {
     border: none;
     outline: none;
@@ -316,6 +320,10 @@ form .txt_field {
  .centerlink {
      display: flex;
      text-align: center;
+ }
+
+ #title {
+     font-size: 20vw;
  }
 
   /* -----------------------------------------------------Responsive--------------------------------------------------------- */

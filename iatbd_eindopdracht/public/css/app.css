@@ -12,13 +12,18 @@
     --color4: #CED4DA;
     --color5: #ADB5BD;
     --color6: #6C757D;
-    --color7: #495057;
-    --color8: #343A40;
-    --color9: #212529;
+    --color7: #4D77FF;
+    --color8: #4D77FF;
+    --color9: #F8F9FA;
 }
 
 div {
     color: var(--color2);;
+}
+
+#title {
+    font-size: 5vw;
+    color: #323333;
 }
 
 *,
