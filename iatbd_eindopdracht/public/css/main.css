@@ -85,7 +85,8 @@ a, .btn_Card {
     width: 99%;
     border-radius: 0px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    text-align: center;
 }
 
 .footer {
@@ -289,6 +290,22 @@ form .txt_field {
   .show {
     display: block;
   }
+
+  .links {
+    display: flex;
+    margin-left: 11vw;
+ }
+
+ .links a {
+     position: absolute;
+     right: 20px;
+ }
+
+ .centerlink {
+     display: flex;
+     text-align: center;
+ }
+
   /* -----------------------------------------------------Responsive--------------------------------------------------------- */
 
 @media only screen and (max-width: 1800px) {
@@ -381,6 +398,10 @@ form .txt_field {
         #myBtn {
             display: grid;
             grid-template-columns: 1fr;
+        }
+
+        .header h1 {
+            font-size: 1.3rem;
         }
 
         .funct {
