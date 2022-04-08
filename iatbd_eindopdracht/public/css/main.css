@@ -1,0 +1,495 @@
+:root {
+    --color1: #F8F9FA;
+    --color2: #E9ECEF;
+    --color3: #DEE2E6;
+    --color4: #CED4DA;
+    --color5: #ADB5BD;
+    --color6: #6C757D;
+    --color7: #333333;
+    --color8: #4D77FF;
+    --color9: #F8F9FA;
+}
+
+.wrapper {
+    display:flex;
+    margin: 1rem;
+    height: 100%;
+    flex-flow: column;
+    align-items: center;
+    text-align: center;
+    background-color: #F8F9FA;
+}
+
+body {
+    -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+  }
+
+p{
+    color: var(--color7);
+    text-align: left;
+    font-size: 18px;
+}
+
+img {
+    filter: grayscale(0.4);
+    border-radius: 0.5rem 0.5rem;
+}
+
+h1 {
+    color: var(--color2);
+}
+
+h2 {
+    color: var(--color3);
+    background-color: var(--color8);
+    border-radius: 0.5rem 0.5rem;
+    padding: 10px 10px;
+}
+
+h3 {
+    color: var(--color3);
+    background-color: var(--color8);
+    border-radius: 0.5rem 0.5rem;
+}
+
+.h1 {
+    color: var(--color2);
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-self: center;
+}
+
+
+a, .btn_Card {
+    font: bold 1.5rem;
+    text-decoration: none;
+    background-color: var(--color8);
+    color: var(--color9);
+    border-top: 1px solid var(--color3);
+    border-right: 1px solid var(--color9);
+    border-bottom: 1px solid var(--color9);
+    border-left: 1px solid var(--color3);
+    display: flex;
+    align-self: center;
+    border-radius: 0.5rem 0.5rem;
+}
+
+.wrapper > * {
+    padding: 10px;
+    margin: 10px;
+    flex: 1 100%;
+    border-radius: 10px;
+}
+
+.header {
+    background-color: var(--color8);
+    height: 130px;
+    width: 99%;
+    border-radius: 0px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.container{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+  }
+
+.footer {
+    background-color: var(--color8);
+    height: 400px;
+    width: 99%;
+    border-radius: 0px;
+    color: var(--color9);
+}
+
+.container a {
+    width: auto;
+    height: auto;
+}
+
+main {
+    padding: 0px;
+}
+
+.item_img {
+    height: 20rem;
+    width: 20rem;
+    border-radius: 1rem 1rem;
+    filter: grayscale(0.6);
+    object-fit: cover;
+}
+
+.item_card {
+    background-color: var(--color9);
+    box-shadow: 2px 5px 2px 5px var(--color8);
+    margin: 10px;
+    height: 35rem;
+    border-radius: 10px;
+    display: none;
+}
+
+.item_card h2 {
+    padding: 0px;
+}
+
+.item_profiel {
+    display: block;
+}
+
+div .item_card {
+    display: flex;
+    flex-direction: column;
+    height: 13rem;
+}
+
+.item_card h2 {
+    background: var(--color9);
+    color: var(--color7);
+}
+
+.item_card a {
+    background-color: var(--color8);
+    border-radius: 1rem 1rem;
+    bottom: 0;
+    color: var(--color1);
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 1.2rem;
+}
+
+.mijnproducten {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.center {
+    background-color: var(--color8);
+    width: 60vh;
+    height: 50vh;
+    border-radius: 1rem 1rem;
+}
+
+.center h1 {
+    text-align: center;
+    padding: 10px 0 20px 0;
+    border-bottom: 1px solid silver;
+}
+
+.center form {
+    padding: 40px;
+    padding-top: 0px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+
+}
+
+.center_review form {
+    height: 15vh;
+}
+
+form .txt_field {
+    position: relative;
+    width: 100%;
+}
+
+.txt_field input, .txt_field select {
+    width: 100%;
+    height: 3vh;
+    border-radius: 5px 5px;
+    margin-bottom: 10px;
+}
+
+ label {
+    display: block;
+    text-align:left;
+    color: var(--color1);
+    font-size: 1.2rem;
+}
+
+.funct_list {
+    padding: 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex-direction: row;
+}
+
+.funct {
+    padding: 20px;
+    text-align: center;
+}
+
+.funct:hover, a:hover {
+    opacity: 0.8;
+}
+
+.wrapper > a {
+    background-color: var(--color8); /* Green */
+    border-radius: 0.5rem 0.5rem;
+    bottom: 0;
+    color: var(--color1);
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 1.2rem;
+}
+
+.mijnreview {
+    background-color: var(--color8);
+    border-color: var(--color9);
+    padding: 20px 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 4px #aeb7d436;
+}
+
+.mijnreview p {
+    color: var(--color9);
+    border: #333333;
+}
+
+.mijnreview a {
+    width: 5vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#accept {
+    color: green;
+    background-color: var(--color9);
+}
+
+#decline {
+    color:red;
+    background-color: var(--color9);
+}
+
+.mijnreviews {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: var(--color9);
+    margin: 40px;
+    gap: 40px;
+}
+
+.center_review {
+    height: 25vh;
+}
+
+.textbox {
+    background-color: var(--color9);
+    padding: 10px 10px;
+    border-radius: 0.5rem 0.5rem;
+}
+
+.text {
+    padding-left: 18%;
+}
+
+.btn.active {
+    background-color: rgb(23, 66, 94);
+    color: white;
+  }
+
+  .btn:hover {
+    background-color: rgb(23, 66, 94);
+  }
+
+  .item_detail {
+    box-shadow: 2px 5px 2px 5px var(--color8);
+    border-radius: 0.5rem 0.5rem;
+  }
+
+  .item_detail img {
+      margin-top: 10px;
+  }
+
+  .btn {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    background-color: var(--color8);
+    cursor: pointer;
+    color: var(--color9);
+  }
+
+  .recensie {
+      height: 30vh;
+  }
+
+  .filter {
+      display: none;
+  }
+
+  .show {
+    display: block;
+  }
+
+  .links {
+    display: flex;
+    margin-left: 11vw;
+ }
+
+ .links a {
+     position: absolute;
+     right: 20px;
+ }
+
+ .centerlink {
+     display: flex;
+     text-align: center;
+ }
+
+ #title {
+     font-size: 20vw;
+ }
+
+  /* -----------------------------------------------------Responsive--------------------------------------------------------- */
+
+@media only screen and (max-width: 1800px) {
+    .mijnproducten {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  @media only screen and (max-width: 1400px) {
+    .mijnproducten {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .mijnreviews {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .mijnreviews p {
+        font-size: 1rem;
+    }
+
+    .item_card h2 {
+        font-size: 1.1rem;
+    }
+    .item_card p {
+        font-size: 0.8rem;
+    }
+
+    .item_card, .item_profiel {
+        height: 40vh;
+    }
+
+    .item_card img {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .item_detail{
+        width: 30rem;
+    }
+
+    .item_detail>figure>img {
+        height: 40vh;
+    }
+  }
+
+  @media only screen and (max-width: 850px) {
+    .mijnreviews p {
+        font-size: 1rem;
+        margin-right: 15px;
+    }
+
+    .mijnreview a {
+        width: 20vw;
+        height: auto;
+    }
+
+    .mijnreviews {
+        grid-template-columns: 1fr;
+    }
+}
+
+  @media only screen and (max-width: 750px) {
+      .item_card h2 {
+          font-size: 0.9rem;
+      }
+  }
+
+
+  @media only screen and (max-width: 650px) {
+
+      .center {
+          width: 40vh;
+      }
+
+
+      .item_detail{
+        width: 22rem;
+    }
+
+    .item_detail>figure>img {
+        height: 30vh;
+    }
+
+    .center {
+        height: 65vh;
+    }
+
+    .center_review {
+        height: 29vh;
+    }
+
+    .center form {
+     height: 30rem;
+    }
+
+    .center_review form {
+        height: 18vh;
+    }
+
+    #name, #kind, #description, #leentijd, #image {
+        height: 5vh;
+        font-size: 1.2rem;
+    }
+
+    #image {
+        font-size: 0.8rem;
+    }
+
+@media only screen and (max-width: 550px) {
+    .mijnproducten {
+        grid-template-columns: 1fr;
+        align-items: stretch;
+        }
+
+        #myBtn {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+        .header h1 {
+            font-size: 1.3rem;
+        }
+
+        .funct {
+            font-size: 0.7rem;
+        }
+    }
+}
